@@ -1,4 +1,4 @@
-# Proyecto-Andorid 
+# Proyecto-Android 
 ANALISIS Y DESARROLLO DE SISTEMAS DE INFORMACION 
 Breynner Alexander Perez Alvarez 
 FICHA: 2567910
