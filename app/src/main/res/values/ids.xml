@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="searchButton" type="id" />
+    <item name="gamesListView" type="id" />
+    <item name="searchEditText" type="id" />
+</resources>
