@@ -1,6 +1,14 @@
 package Funciones;
 
+import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.BreynnerPerez.juegossena.MainActivity2;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -15,10 +23,17 @@ import okhttp3.Response;
 public class ApiRequest {
     public ApiRequest(){}
     private final OkHttpClient client = new OkHttpClient();
+    JSONArray jsonArray;
 
+    public JSONArray getjsonArray() {
+        return jsonArray;
+    }
 
+    public void setMijSON(JSONArray jsonArray) {
+        jsonArray = jsonArray;
+    }
 
-    public void makePost(String busqueda){
+    public String makePost(String busqueda){
         MediaType MEDIA_TYPE_TEXT = MediaType.parse("text/plain");
         String requestBody = "search \""+busqueda+"\"; fields name;";
 
@@ -41,10 +56,22 @@ public class ApiRequest {
                     throw new IOException("Unexpected code " + response);
                 } else {
                     // do something with the response
-                    Log.e("datos",response.body().string());
+                    //String rta = new String (String.valueOf(response));
+                    Log.e("datos ebn la clase api request ",""+response.body());
+                    /*
+                    try {
+                        jsonArray = new JSONArray(rta);
+                        Log.e("json clase api", jsonArray.toString());
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                    String requestBody = new String(String.valueOf(response));
+
+                     */
                 }
             }
         });
+        return requestBody;
     }
 
 }
